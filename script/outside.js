@@ -9,7 +9,6 @@ var Outside = {
 	_TRAPS_DELAY: 90,
 	_POP_DELAY: [0.5, 3],
 	_HUT_ROOM: 4,
-	_HOUSE_ROOM: 2,
 	
 	_INCOME: {
 		'gatherer': {
@@ -176,7 +175,7 @@ var Outside = {
 	},
 	
 	getMaxPopulation: function() {
-		return $SM.get('game.buildings["hut"]', true) * Outside._HUT_ROOM + $SM.get('game.buildings["house"]', true) * Outside._HOUSE_ROOM;	
+		return $SM.get('game.buildings["hut"]', true) * Outside._HUT_ROOM + $SM.get('game.buildings["house"]', true) * 2;	
 	},
 	
 	increasePopulation: function() {
