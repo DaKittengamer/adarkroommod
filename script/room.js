@@ -60,9 +60,9 @@ var Room = {
 			name: _('house'),
 			button: null,
 			maximum: 20,
-			availableMsg: _('builder says you can fit more people if you make the huts stronger.'),
-			buildMsg: _('the builder made a hut stronger.'),
-			maxMsg: _('theres no more huts to reinforce.'),
+			availableMsg: _('builder says you can fit more people if you make the huts stronger. You can build more floors that way.'),
+			buildMsg: _('the builder made a hut stronger and added a floor.'),
+			maxMsg: _('your building material arent strong enough to add any more floors to your huts.'),
 			type: 'building',
 			cost: function () {
 				var h = $SM.get('game.buildings["house"]', true);
