@@ -43,7 +43,11 @@ var Room = {
 		'hut': {
 			name: _('hut'),
 			button: null,
-			maximum: 20,
+			maximum: function () {
+				var h = $SM.get('game.buildings["house"], true);
+				return {
+					20 - h
+			};,
 			availableMsg: _("builder says there are more wanderers. says they'll work, too."),
 			buildMsg: _('builder puts up a hut, out in the forest. says word will get around.'),
 			maxMsg: _('no more room for huts.'),
@@ -59,13 +63,16 @@ var Room = {
 		'house': {
 			name: _('house'),
 			button: null,
-			maximum: 15,
+			maximum: 20,
 			availableMsg: _('builder says you can fit more people if you make the huts stronger.'),
 			buildMsg: _('the builder made a hut stronger.'),
 			maxMsg: _('theres no more huts to reinforce.'),
 			type: 'building',
 			cost: function () {
+				var n = $SM.get('game.buildings["house"]', true);
+				var h = $SM.get('game.buildings["hut"]', true);
 				return {
+					
 				};
 			},
 		},
