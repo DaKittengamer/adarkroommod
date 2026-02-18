@@ -61,8 +61,8 @@ var Room = {
 			button: null,
 			maximum: 20,
 			availableMsg: _('builder says you can fit more people if you make the huts stronger'),
-			buildMsg: _('the builder made a hut stronger),
-			maxMsg: _('theres no more huts to reinforce'),
+			buildMsg: _('the builder made a hut stronger.'),
+			maxMsg: _('theres no more huts to reinforce.'),
 			type: 'building',
 			cost: function () {
 				return {
