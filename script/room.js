@@ -59,7 +59,7 @@ var Room = {
 		'house': {
 			name: _('house'),
 			button: null,
-			maximum: 20,
+			maximum: 15,
 			availableMsg: _('builder says you can fit more people if you make the huts stronger.'),
 			buildMsg: _('the builder made a hut stronger.'),
 			maxMsg: _('theres no more huts to reinforce.'),
