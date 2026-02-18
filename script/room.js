@@ -44,7 +44,7 @@ var Room = {
 			name: _('hut'),
 			button: null,
 			maximum: function () {
-				var h = $SM.get('game.buildings["house"], true);
+				var h = $SM.get('game.buildings["house"]', true);
 				return {
 					20 - h
 			};,
