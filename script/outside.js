@@ -177,7 +177,7 @@ var Outside = {
 	
 	getMaxPopulation: function() {
 		var a = $SM.get('game.buildings["hut"]', true) * Outside._HUT_ROOM;
-		var b = $SM.get('game.buildings["hut"]', true) * Outside._HOUSE_ROOM;
+		var b = $SM.get('game.buildings["house"]', true) * Outside._HOUSE_ROOM;
 		return a + b;
 	},
 	
