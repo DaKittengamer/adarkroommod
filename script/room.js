@@ -56,6 +56,19 @@ var Room = {
 			},
 			audio: AudioLibrary.BUILD_HUT
 		},
+		'house': {
+			name: _('house'),
+			button: null,
+			maximum: 20
+			availableMsg: _('builder says you can fit more people if you make the huts stronger'),
+			buildMsg: _('the builder made a hut stronger),
+			maxMsg: _('theres no more huts to reinforce'),
+			type: 'building',
+			cost: function () {
+				return {
+				};
+			},
+		},
 		'lodge': {
 			name: _('lodge'),
 			button: null,
