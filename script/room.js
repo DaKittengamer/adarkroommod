@@ -59,10 +59,10 @@ var Room = {
 		'house': {
 			name: _('house'),
 			button: null,
-			maximum: 20,
+			maximum: 15,
 			availableMsg: _('builder says you can fit more people if you make the huts stronger. You can build more floors that way.'),
 			buildMsg: _('the builder made a hut stronger and added a floor.'),
-			maxMsg: _('your building material arent strong enough to add any more floors to your huts.'),
+			maxMsg: _('your building materials arent strong enough to add any more floors to your huts.'),
 			type: 'building',
 			cost: function () {
 				var h = $SM.get('game.buildings["house"]', true);
@@ -72,6 +72,28 @@ var Room = {
 				};
 			},
 		},
+		'highrise': {
+			name: _('highrise'),
+			button: null,
+			maximum: 10,
+			availableMsg: _('builder says you can make houses stronger. You can stack them that way'),
+			buildMsg: _('a highrise casts its shadow across your community, bringing a sense of wonder and hope for what the future holds.'),
+			maxMsg: _('your building materials arent strong enough to support more floors.'),
+			type: 'building',
+			cost: function () {
+				var h = $SM.get('game.buildings["highrise"]', true);
+				return {
+					'wood': 2000 + (h * 200),
+					'iron': 750 + (h * 75),
+					'steel': 25 + (h * 25)
+				};
+			},
+		},
+		'skyscraper': {
+			name: _('skyscraper'),
+			button: null,
+			maximum: 5,
+			availableMsg: _('there are legends of buildings which fit hundreds, which touched the sky. builder says they are real
 		'lodge': {
 			name: _('lodge'),
 			button: null,
