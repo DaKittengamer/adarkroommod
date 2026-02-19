@@ -583,7 +583,7 @@ var Outside = {
 			title = _("A Magnificent Metropolis");
 		} else {
 			title = _("If you are seeing this either my math is wrong and its possible to get over 10k pop which I doubt or you are modding this and should change this at about line 580 of script/outside.js");
-		}
+		};
 		
 		if(Engine.activeModule == this) {
 			document.title = title;
