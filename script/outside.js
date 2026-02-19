@@ -557,12 +557,11 @@ var Outside = {
 	},
 	
 	setTitle: function() {
-		var numHuts = $SM.get('game.buildings["hut"]', true);
 		var pop = $SM.get('game.population');
 		var title;
-		if(numHuts === 0) {
+		if(pop === 0) {
 			title = _("A Silent Forest");
-		} else if(numHuts == 1) {
+		} else if(pop <= 4) {
 			title = _("A Lonely Hut");
 		} else if(pop <= 16) {
 			title = _("A Tiny Village");
