@@ -10,7 +10,7 @@ var Path = {
 		'bullets': 0.1,
 		'energy cell': 0.2,
 		'laser rifle': 5,
-    'plasma rifle': 5,
+    	'plasma rifle': 5,
 		'bolas': 0.5,
 	},
 		

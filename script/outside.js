@@ -175,7 +175,7 @@ var Outside = {
 	},
 	
 	getMaxPopulation: function() {
-		return $SM.get('game.buildings["hut"]', true) * Outside._HUT_ROOM;
+		return $SM.get('game.buildings["hut"]', true) * Outside._HUT_ROOM + $SM.get('game.buildings["house"]', true) * 2 + $SM.get('game.buildings["highrise"]', true) * 20 + $SM.get('game.buildings["skyscraper"]', true) * 500;	
 	},
 	
 	increasePopulation: function() {
@@ -191,8 +191,10 @@ var Outside = {
 				Notifications.notify(null, _('a small group arrives, all dust and bones.'));
 			} else if(num < 30) {
 				Notifications.notify(null, _('a convoy lurches in, equal parts worry and hope.'));
-			} else {
+			} else if(num < 500) {
 				Notifications.notify(null, _("the town's booming. word does get around."));
+			} else {
+				Notifications.notify(null, _('hundreds stream into town saying they have followed the shining tower on the horizon, seeking a better life.'));
 			}
 			Engine.log('population increased by ' + num);
 			$SM.add('game.population', num);
@@ -555,21 +557,33 @@ var Outside = {
 	},
 	
 	setTitle: function() {
-		var numHuts = $SM.get('game.buildings["hut"]', true);
+		var pop = $SM.get('game.population');
 		var title;
-		if(numHuts === 0) {
+		if(pop === 0) {
 			title = _("A Silent Forest");
-		} else if(numHuts == 1) {
+		} else if(pop <= 4) {
 			title = _("A Lonely Hut");
-		} else if(numHuts <= 4) {
+		} else if(pop <= 16) {
 			title = _("A Tiny Village");
-		} else if(numHuts <= 8) {
+		} else if(pop <= 32) {
 			title = _("A Modest Village");
-		} else if(numHuts <= 14) {
+		} else if(pop <= 56) {
 			title = _("A Large Village");
-		} else {
+		} else if(pop <= 100) {
 			title = _("A Raucous Village");
-		}
+		} else if(pop <= 250) {
+			title = _("A Small Town");
+		} else if(pop <= 500) {
+			title = _("A Small City");
+		} else if(pop <= 1000) {
+			title = _("A Bustling City");
+		} else if(pop <= 5000) {
+			title = _("A Metropolis");
+		} else if(pop <= 10000) {
+			title = _("A Magnificent Metropolis");
+		} else {
+			title = _("If you are seeing this either my math is wrong and its possible to get over 10k pop which I doubt or you are modding this and should change this at about line 580 of script/outside.js");
+		};
 		
 		if(Engine.activeModule == this) {
 			document.title = title;
