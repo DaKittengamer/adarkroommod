@@ -103,6 +103,10 @@ var Room = {
 					'wood': 10000 + (s * 1000),
 					'iron': 5000 + (s * 500),
 					'steel': 2500 + (s * 250),
+					'alien alloy': 5 + (s * 5)
+				};
+			},
+		},
 		'lodge': {
 			name: _('lodge'),
 			button: null,
