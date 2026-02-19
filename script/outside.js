@@ -559,7 +559,7 @@ var Outside = {
 	setTitle: function() {
 		var pop = $SM.get('game.population');
 		var title;
-		if(pop = 0) {
+		if(pop === 0) {
 			title = _("A Silent Forest");
 		} else if(pop <= 4) {
 			title = _("A Lonely Hut");
